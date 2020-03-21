@@ -2,7 +2,7 @@
   "name": "fullstack-server",
   "version": "1.0.0",
   "scripts": {
-    "local": "JWT_SECRET=dev USERS={\\\"dev\\\":\\\"7yYOmqPGc68kDReiZgSANhqOCB0f/soqXtDjIZ/BhWc=\\\"} STAGE=development PORT=5000 nest start --watch",
+    "local": "STAGE=development PORT=5000 nest start --watch",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -24,6 +24,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.4",
