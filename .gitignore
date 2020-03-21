@@ -2,3 +2,5 @@ server/dist
 node_modules
 frontend/build
 .vscode
+yarn-error.log
+react-app-env.d.ts

@@ -1,5 +1,7 @@
+import { observable } from 'mobx';
+
 export class MoviePutRequestDto {
   id!: string;
-  title!: string;
-  year?: number;
+  @observable title!: string;
+  @observable year?: number;
 }

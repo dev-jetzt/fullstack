@@ -14,7 +14,7 @@ import { MovieMapper } from './movie.mapper';
 import { MoviePostRequestDto } from '../shared/dtos/movie.post.request.dto';
 import { MoviePutRequestDto } from '../shared/dtos/movie.put.request.dto';
 
-@Controller('movies')
+@Controller('api/movies')
 export class MoviesController {
   constructor(
     private readonly moviesService: MoviesService,
