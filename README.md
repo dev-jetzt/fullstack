@@ -23,7 +23,7 @@ $ cd frontend
 $ npm install
 $ npm run local
 ```
-The server is now listening on port 4001. A browser window may automatically open.
+The frontend is now listening on port 4001. A browser window may automatically open.
 
 ## Tech Notes
 For the backend, this app uses NextJS with TypeORM and Postgres. 
