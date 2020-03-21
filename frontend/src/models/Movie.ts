@@ -20,6 +20,7 @@ export default class Movie {
 
   public toPutRequestDto(): MoviePutRequestDto {
     const dto = new MoviePutRequestDto();
+    dto.id = this.id;
     dto.title = this.title;
     dto.year = this.year;
     return dto;

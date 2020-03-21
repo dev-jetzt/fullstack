@@ -21,6 +21,11 @@ export class MoviesService {
   }
 
   async save(movie: Movie): Promise<Movie> {
-    return this.moviesRepository.save(movie);
+    await this.moviesRepository.save(movie);
+    return this.findOne(movie.id);
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.moviesRepository.delete(id);
   }
 }

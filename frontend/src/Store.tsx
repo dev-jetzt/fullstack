@@ -3,6 +3,7 @@ import { observable, configure, action, runInAction } from 'mobx';
 import Movie from './models/Movie';
 import axios from 'axios';
 import config from './config';
+import { MoviePutRequestDto } from './shared/dtos/movie.put.request.dto';
 
 configure({ enforceActions: 'observed' });
 
@@ -28,6 +29,27 @@ export class Store {
       this.movies = this.movies.filter(m => m.id !== movie.id);
       this.movies.push(movie);
     });
+  };
+
+  @action
+  public updateMovie = async (dto: MoviePutRequestDto) => {
+    const result = await axios.put(`${config.apiUrl}/movies`, dto);
+    const movie = Movie.fromGetResponseDto(result.data);
+    if (!movie) return;
+    await runInAction(() => {
+      this.movies = this.movies.filter(m => m.id !== movie.id);
+      this.movies.push(movie);
+    });
+  };
+
+  @action
+  public deleteMovie = async (id: string): Promise<void> => {
+    const result = await axios.delete(`${config.apiUrl}/movies/${id}`);
+    if (result.status === 200) {
+      return;
+    } else {
+      throw new Error('Deletion failed');
+    }
   };
 }
 

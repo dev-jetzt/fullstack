@@ -6,6 +6,7 @@ import {
   Post,
   Body,
   Put,
+  Delete,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { Movie } from './movie.entity';
@@ -46,5 +47,10 @@ export class MoviesController {
     const movie = this.movieMapper.putDtoToEntity(dto);
     const result = await this.moviesService.save(movie);
     return this.movieMapper.entityToDto(result);
+  }
+
+  @Delete(':id')
+  async delete(@Param('id') id): Promise<void> {
+    await this.moviesService.delete(id);
   }
 }
