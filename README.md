@@ -1,7 +1,7 @@
 # Fullstack
 
 ## What is this?
-This is a minimalist sample web app to demonstrate multiple technologies used at Dev.jetzt camp 01/2020.
+This is a minimalist sample web app (a movie database) to demonstrate multiple technologies used at Dev.jetzt camp 01/2020.
 
 ## How to run locally
 First, clone to a directory of your choice. Then...
