@@ -1,8 +1,9 @@
-import { MovieGetResponseDto } from '../shared/dtos/movie.get.response.dto';
-import { Movie } from './movie.entity';
 import { Injectable } from '@nestjs/common';
+
+import { MovieGetResponseDto } from '../shared/dtos/movie.get.response.dto';
 import { MoviePostRequestDto } from '../shared/dtos/movie.post.request.dto';
 import { MoviePutRequestDto } from '../shared/dtos/movie.put.request.dto';
+import { Movie } from './movie.entity';
 
 @Injectable()
 export class MovieMapper {
@@ -11,8 +12,8 @@ export class MovieMapper {
     dto.id = entity.id;
     dto.title = entity.title;
     dto.year = entity.year;
-    dto.created = JSON.stringify(entity.created);
-    dto.updated = JSON.stringify(entity.updated);
+    dto.created = entity.created?.toISOString();
+    dto.updated = entity.updated?.toISOString();
     return dto;
   }
 
