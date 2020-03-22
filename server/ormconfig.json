@@ -1,10 +1,8 @@
 {
-  "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "fullstack",
-  "password": "fullstack",
-  "database": "fullstack",
-  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "type": "sqlite",
+  "database": "fullstack.sqlite",
+  "entities": [
+    "dist/**/*.entity{.ts,.js}"
+  ],
   "synchronize": true
 }

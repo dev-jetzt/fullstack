@@ -4,3 +4,4 @@ frontend/build
 .vscode
 yarn-error.log
 react-app-env.d.ts
+server/fullstack.sqlite
