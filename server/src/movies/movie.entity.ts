@@ -18,8 +18,8 @@ export class Movie {
   year?: number;
 
   @CreateDateColumn()
-  created?: Date;
+  created!: Date;
 
   @UpdateDateColumn()
-  updated?: Date;
+  updated!: Date;
 }
