@@ -18,7 +18,8 @@ class MovieListComponent extends React.Component {
       <div className="section">
         <div className="container">
           <h2>Meine Filme</h2>
-          <ul>
+          <Link to={`/movie/new`}>Film hinzufügen</Link>
+          <ul className="mt-5">
             {this.context.movies
               .slice()
               .sort((m1, m2) =>

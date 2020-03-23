@@ -5,6 +5,7 @@ import MovieListComponent from './components/MovieListComponent';
 import MovieDetailsComponent from './components/MovieDetailsComponent';
 import HeaderComponent from './components/HeaderComponent';
 import MovieEditorComponent from './components/MovieEditorComponent';
+import NewMovieEditorComponent from './components/NewMovieEditorComponent';
 
 class App extends React.Component {
   public render() {
@@ -15,6 +16,9 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact={true}>
               <MovieListComponent />
+            </Route>
+            <Route path="/movie/new" exact={true}>
+              <NewMovieEditorComponent />
             </Route>
             <Route path="/movie/:id" exact={true}>
               <MovieDetailsComponent />
