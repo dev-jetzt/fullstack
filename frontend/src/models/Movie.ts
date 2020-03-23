@@ -13,8 +13,8 @@ export default class Movie {
     movie.id = dto.id;
     movie.title = dto.title;
     movie.year = dto.year;
-    movie.created = JSON.parse(dto.created);
-    movie.updated = JSON.parse(dto.updated);
+    movie.created = new Date(dto.created);
+    movie.updated = new Date(dto.updated);
     return movie;
   }
 

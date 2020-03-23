@@ -4,6 +4,7 @@ import Movie from './models/Movie';
 import axios from 'axios';
 import config from './config';
 import { MoviePutRequestDto } from './shared/dtos/movie.put.request.dto';
+import { MoviePostRequestDto } from './shared/dtos/movie.post.request.dto';
 
 configure({ enforceActions: 'observed' });
 
@@ -23,6 +24,17 @@ export class Store {
   @action
   public loadOneMovie = async (id: string) => {
     const result = await axios.get(`${config.apiUrl}/movies/${id}`);
+    const movie = Movie.fromGetResponseDto(result.data);
+    if (!movie) return;
+    await runInAction(() => {
+      this.movies = this.movies.filter(m => m.id !== movie.id);
+      this.movies.push(movie);
+    });
+  };
+
+  @action
+  public createMovie = async (dto: MoviePostRequestDto) => {
+    const result = await axios.post(`${config.apiUrl}/movies`, dto);
     const movie = Movie.fromGetResponseDto(result.data);
     if (!movie) return;
     await runInAction(() => {

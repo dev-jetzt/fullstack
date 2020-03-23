@@ -15,7 +15,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "local": "PORT=4001 yarn start",
+    "local": "PORT=4001 react-app-rewired start",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "serve": "serve -s build -p 4001"
